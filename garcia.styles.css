@@ -59,19 +59,20 @@
     }
     /* ----- ANIMATED ICON ----- */
     /* Icon and animation code from https://typogram.github.io/Anicons/ */
-    @font-face {
-        font-family: "Anicons Regular";
-        src: url("https://typogram.github.io/Anicons/fonts/Anicons-Regular.woff2") format("woff2");
-    }
     
     .icon {
         font-family: "Anicons Regular", sans-serif;
         font-size: 2em;
         display: inline-block;
-        margin: 0 0.5em;
-        animation: icon-animation 1.5s ease-in-out infinite alternate;
     }
-    
+    .icon {
+        font-variation-settings: "TIME" 1;
+        transition: font-variation-settings 0.4s ease;
+     }
+     .icon:hover {
+        font-variation-settings: "TIME" 100;
+     }
+     
     footer .icon {
         font-size: 1em;
     }
@@ -91,7 +92,6 @@
         }
     }
     
-
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -112,13 +112,6 @@
         }
     }
     
-    section {
-        animation: fadeIn 1s ease-in-out;
-    }
-    
-    h1, h2 {
-        animation: slideUp 0.8s ease-in-out;
-    }
     
     /* ----- HANDLE PREFERS REDUCED MOTION FOR THE ICON ANIMATIONS ----- */
     /* --------------- BEGIN USER PREFERS REDUCED MOTION QUERY --------------- */
